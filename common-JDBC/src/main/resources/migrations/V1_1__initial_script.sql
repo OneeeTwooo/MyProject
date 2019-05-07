@@ -76,6 +76,6 @@ ALTER TABLE `rents` ADD CONSTRAINT `rents_fk0` FOREIGN KEY (`id_user`) REFERENCE
 
 ALTER TABLE `rents` ADD CONSTRAINT `rents_fk1` FOREIGN KEY (`id_car`) REFERENCES `cars`(`id_car`);
 
-ALTER TABLE `user_role` ADD CONSTRAINT `user_role_fk0` FOREIGN KEY (`id_role`) REFERENCES `role_names`(`id_role`);
+ALTER TABLE `user_role` ADD CONSTRAINT `user_role_fk0` FOREIGN KEY (`id_role`) REFERENCES roles(`id_role`);
 
 ALTER TABLE `user_role` ADD CONSTRAINT `user_role_fk1` FOREIGN KEY (`id_user`) REFERENCES `users`(`id_user`);

@@ -1,31 +1,19 @@
-package com.htp.domain;
+package com.htp.controller.requests;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.apache.commons.lang3.builder.ToStringStyle;
 
 import java.util.Objects;
 
-public class Role {
-
-    private Long idRole;
+public class RoleCreateRequest {
     private String nameRole;
     private String roleType;
 
-    public Role() {
+    public RoleCreateRequest() {
     }
 
-    public Role(Long roleId, String nameRole, String roleType) {
-        this.idRole = roleId;
+    public RoleCreateRequest(String nameRole, String roleType) {
         this.nameRole = nameRole;
         this.roleType = roleType;
-    }
-
-    public Long getIdRole() {
-        return idRole;
-    }
-
-    public void setIdRole(Long idRole) {
-        this.idRole = idRole;
     }
 
     public String getNameRole() {
@@ -48,20 +36,21 @@ public class Role {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Role role = (Role) o;
-        return Objects.equals(idRole, role.idRole) &&
-                Objects.equals(nameRole, role.nameRole) &&
-                Objects.equals(roleType, role.roleType);
+        RoleCreateRequest that = (RoleCreateRequest) o;
+        return Objects.equals(nameRole, that.nameRole) &&
+                Objects.equals(roleType, that.roleType);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(idRole, nameRole, roleType);
+        return Objects.hash(nameRole, roleType);
     }
 
     @Override
     public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
+        {
+            return ToStringBuilder.reflectionToString(this);
+        }
     }
 }

@@ -11,8 +11,7 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StopWatch;
 
-@Aspect
-@Component
+
 public class LoggingAspect {
     private static final Logger LOGGER = Logger.getLogger(LoggingAspect.class);
 

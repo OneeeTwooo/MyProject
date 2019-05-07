@@ -8,12 +8,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="commonJDBC" />
         <module name="MyProject" />
+        <module name="myproject" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="commonJDBC" target="1.8" />
       <module name="MyProject" target="1.8" />
-      <module name="myproject" target="1.5" />
+      <module name="myproject" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
