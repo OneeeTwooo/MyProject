@@ -101,6 +101,7 @@ public class RoleDaoImpl implements RoleDao {
         final String updateQuery = "UPDATE roles set name_role = :nameRole, type_role = :typeRole where id_role = :idRole";
 
         MapSqlParameterSource params = new MapSqlParameterSource();
+        params.addValue("idRole", entity.getIdRole());
         params.addValue("nameRole", entity.getNameRole());
         params.addValue("typeRole", entity.getRoleType());
 
