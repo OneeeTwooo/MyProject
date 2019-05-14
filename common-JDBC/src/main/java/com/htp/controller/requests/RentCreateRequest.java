@@ -1,12 +1,11 @@
-package com.htp.domain;
+package com.htp.controller.requests;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import java.sql.Timestamp;
 import java.util.Objects;
 
-public class Rent {
-    private Long rentId;
+public class RentCreateRequest {
     private Long userId;
     private Long carId;
     private Long damageId;
@@ -15,12 +14,11 @@ public class Rent {
     private Timestamp createdWhen;
     private Timestamp modifyWhen;
 
-    public Rent() {
+    public RentCreateRequest() {
     }
 
-    public Rent(Long rentId, Long userId, Long carId, Long damageId, Timestamp rentalStartDate,
-                Timestamp rentalFinishDate, Timestamp createdWhen, Timestamp modifyWhen) {
-        this.rentId = rentId;
+    public RentCreateRequest(Long userId, Long carId, Long damageId, Timestamp rentalStartDate,
+                             Timestamp rentalFinishDate, Timestamp createdWhen, Timestamp modifyWhen) {
         this.userId = userId;
         this.carId = carId;
         this.damageId = damageId;
@@ -28,23 +26,6 @@ public class Rent {
         this.rentalFinishDate = rentalFinishDate;
         this.createdWhen = createdWhen;
         this.modifyWhen = modifyWhen;
-    }
-
-    public Long getDamageId() {
-        return damageId;
-    }
-
-    public void setDamageId(Long damageId) {
-        this.damageId = damageId;
-    }
-
-    public Long getRentId() {
-
-        return rentId;
-    }
-
-    public void setRentId(Long rentId) {
-        this.rentId = rentId;
     }
 
     public Long getUserId() {
@@ -61,6 +42,14 @@ public class Rent {
 
     public void setCarId(Long carId) {
         this.carId = carId;
+    }
+
+    public Long getDamageId() {
+        return damageId;
+    }
+
+    public void setDamageId(Long damageId) {
+        this.damageId = damageId;
     }
 
     public Timestamp getRentalStartDate() {
@@ -99,27 +88,24 @@ public class Rent {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Rent rent = (Rent) o;
-        return Objects.equals(rentId, rent.rentId) &&
-                Objects.equals(userId, rent.userId) &&
-                Objects.equals(carId, rent.carId) &&
-                Objects.equals(damageId, rent.damageId) &&
-                Objects.equals(rentalStartDate, rent.rentalStartDate) &&
-                Objects.equals(rentalFinishDate, rent.rentalFinishDate) &&
-                Objects.equals(createdWhen, rent.createdWhen) &&
-                Objects.equals(modifyWhen, rent.modifyWhen);
+        RentCreateRequest that = (RentCreateRequest) o;
+        return Objects.equals(userId, that.userId) &&
+                Objects.equals(carId, that.carId) &&
+                Objects.equals(damageId, that.damageId) &&
+                Objects.equals(rentalStartDate, that.rentalStartDate) &&
+                Objects.equals(rentalFinishDate, that.rentalFinishDate) &&
+                Objects.equals(createdWhen, that.createdWhen) &&
+                Objects.equals(modifyWhen, that.modifyWhen);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(rentId, userId, carId, damageId, rentalStartDate, rentalFinishDate, createdWhen, modifyWhen);
+        return Objects.hash(userId, carId, damageId, rentalStartDate, rentalFinishDate, createdWhen, modifyWhen);
     }
 
     @Override
     public String toString() {
         return ToStringBuilder.reflectionToString(this);
     }
-
 }
-

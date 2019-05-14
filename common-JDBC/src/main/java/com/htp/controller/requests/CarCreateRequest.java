@@ -1,14 +1,12 @@
-package com.htp.domain;
+package com.htp.controller.requests;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.apache.commons.lang3.builder.ToStringStyle;
 
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.Objects;
 
-public class Car {
-    private Long car_id;
+public class CarCreateRequest {
     private String gosNumber;
     private String mark;
     private String model;
@@ -20,12 +18,11 @@ public class Car {
     private Timestamp createdWhen;
     private Timestamp modifyWhen;
 
-    public Car() {
+    public CarCreateRequest() {
     }
 
-    public Car(Long car_id, String gosNumber, String mark, String model, Date yearOut, String type, Float fullCost,
-               Float costOneDay, String isDeleted, Timestamp createdWhen, Timestamp modifyWhen) {
-        this.car_id = car_id;
+    public CarCreateRequest(String gosNumber, String mark, String model, Date yearOut, String type, Float fullCost,
+                            Float costOneDay, String isDeleted, Timestamp createdWhen, Timestamp modifyWhen) {
         this.gosNumber = gosNumber;
         this.mark = mark;
         this.model = model;
@@ -44,14 +41,6 @@ public class Car {
 
     public void setIsDeleted(String isDeleted) {
         this.isDeleted = isDeleted;
-    }
-
-    public Long getCar_id() {
-        return car_id;
-    }
-
-    public void setCar_id(Long car_id) {
-        this.car_id = car_id;
     }
 
     public String getGosNumber() {
@@ -130,28 +119,27 @@ public class Car {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Car car = (Car) o;
-        return Objects.equals(car_id, car.car_id) &&
-                Objects.equals(gosNumber, car.gosNumber) &&
-                Objects.equals(mark, car.mark) &&
-                Objects.equals(model, car.model) &&
-                Objects.equals(yearOut, car.yearOut) &&
-                Objects.equals(type, car.type) &&
-                Objects.equals(fullCost, car.fullCost) &&
-                Objects.equals(costOneDay, car.costOneDay) &&
-                Objects.equals(isDeleted, car.isDeleted) &&
-                Objects.equals(createdWhen, car.createdWhen) &&
-                Objects.equals(modifyWhen, car.modifyWhen);
+        CarCreateRequest that = (CarCreateRequest) o;
+        return Objects.equals(gosNumber, that.gosNumber) &&
+                Objects.equals(mark, that.mark) &&
+                Objects.equals(model, that.model) &&
+                Objects.equals(yearOut, that.yearOut) &&
+                Objects.equals(type, that.type) &&
+                Objects.equals(fullCost, that.fullCost) &&
+                Objects.equals(costOneDay, that.costOneDay) &&
+                Objects.equals(isDeleted, that.isDeleted) &&
+                Objects.equals(createdWhen, that.createdWhen) &&
+                Objects.equals(modifyWhen, that.modifyWhen);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(car_id, gosNumber, mark, model, yearOut, type, fullCost, costOneDay, isDeleted, createdWhen, modifyWhen);
+        return Objects.hash(gosNumber, mark, model, yearOut, type, fullCost, costOneDay, isDeleted, createdWhen, modifyWhen);
     }
 
     @Override
     public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
+        return ToStringBuilder.reflectionToString(this);
     }
 }
