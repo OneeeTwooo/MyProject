@@ -43,7 +43,7 @@ public class Rent {
       name = "damage_rent",
       joinColumns = @JoinColumn(name = "id_rent"),
       inverseJoinColumns = @JoinColumn(name = "id_damage"))
-  private Set<Damage> hibirnateDamages = Collections.emptySet();
+  private Set<Damage> damages = Collections.emptySet();
 
   public Rent() {}
 
@@ -54,14 +54,14 @@ public class Rent {
       Timestamp createdWhen,
       Timestamp modifyWhen,
       Car car,
-      Set<Damage> hibirnateDamages) {
+      Set<Damage> damages) {
     this.userId = userId;
     this.rentalStartDate = rentalStartDate;
     this.rentalFinishDate = rentalFinishDate;
     this.createdWhen = createdWhen;
     this.modifyWhen = modifyWhen;
     this.car = car;
-    this.hibirnateDamages = hibirnateDamages;
+    this.damages = damages;
   }
 
   public Long getRentId() {
@@ -113,11 +113,11 @@ public class Rent {
   }
 
   public Set<Damage> getHibirnateDamages() {
-    return hibirnateDamages;
+    return damages;
   }
 
-  public void setHibirnateDamages(Set<Damage> hibirnateDamages) {
-    this.hibirnateDamages = hibirnateDamages;
+  public void setHibirnateDamages(Set<Damage> damages) {
+    this.damages = damages;
   }
 
   public Car getCar() {

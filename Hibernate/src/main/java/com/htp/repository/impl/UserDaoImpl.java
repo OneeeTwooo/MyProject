@@ -62,4 +62,9 @@ public class UserDaoImpl implements UserDao {
       return session.find(User.class, entity.getUserId());
     }
   }
+
+  @Override
+  public User findByLogin(String login) {
+    return null;
+  }
 }
