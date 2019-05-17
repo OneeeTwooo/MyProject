@@ -108,13 +108,7 @@ public class Rent {
   public int hashCode() {
 
     return Objects.hash(
-        rentId,
-        userId,
-        carId,
-        rentalStartDate,
-        rentalFinishDate,
-        createdWhen,
-        modifyWhen);
+        rentId, userId, carId, rentalStartDate, rentalFinishDate, createdWhen, modifyWhen);
   }
 
   @Override
