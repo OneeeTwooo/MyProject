@@ -9,7 +9,6 @@ public class Rent {
   private Long rentId;
   private Long userId;
   private Long carId;
-  private Long damageId;
   private Timestamp rentalStartDate;
   private Timestamp rentalFinishDate;
   private Timestamp createdWhen;
@@ -21,7 +20,6 @@ public class Rent {
       Long rentId,
       Long userId,
       Long carId,
-      Long damageId,
       Timestamp rentalStartDate,
       Timestamp rentalFinishDate,
       Timestamp createdWhen,
@@ -29,19 +27,10 @@ public class Rent {
     this.rentId = rentId;
     this.userId = userId;
     this.carId = carId;
-    this.damageId = damageId;
     this.rentalStartDate = rentalStartDate;
     this.rentalFinishDate = rentalFinishDate;
     this.createdWhen = createdWhen;
     this.modifyWhen = modifyWhen;
-  }
-
-  public Long getDamageId() {
-    return damageId;
-  }
-
-  public void setDamageId(Long damageId) {
-    this.damageId = damageId;
   }
 
   public Long getRentId() {
@@ -109,7 +98,6 @@ public class Rent {
     return Objects.equals(rentId, rent.rentId)
         && Objects.equals(userId, rent.userId)
         && Objects.equals(carId, rent.carId)
-        && Objects.equals(damageId, rent.damageId)
         && Objects.equals(rentalStartDate, rent.rentalStartDate)
         && Objects.equals(rentalFinishDate, rent.rentalFinishDate)
         && Objects.equals(createdWhen, rent.createdWhen)
@@ -123,7 +111,6 @@ public class Rent {
         rentId,
         userId,
         carId,
-        damageId,
         rentalStartDate,
         rentalFinishDate,
         createdWhen,

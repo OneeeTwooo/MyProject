@@ -22,9 +22,9 @@ import java.util.Objects;
 @Transactional
 public class RoleDaoImpl implements RoleDao {
 
-  public static final String ROLE_ID = "id_role";
-  public static final String ROLE_NAME = "name_role";
-  public static final String ROLE_TYPE = "type_role";
+  private static final String ROLE_ID = "id_role";
+  private static final String ROLE_NAME = "name_role";
+  private static final String ROLE_TYPE = "type_role";
 
   @Autowired private JdbcTemplate jdbcTemplate;
 

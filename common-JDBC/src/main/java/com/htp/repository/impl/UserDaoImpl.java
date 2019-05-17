@@ -19,16 +19,16 @@ import java.util.Objects;
 @Transactional
 public class UserDaoImpl implements UserDao {
 
-  public static final String USER_ID = "id_user";
-  public static final String FIRST_NAME = "first_name";
-  public static final String LAST_NAME = "last_name";
-  public static final String PASSPORT_ID = "id_passport";
-  public static final String PHONE_NUMBER = "phone_number";
-  public static final String USER_NAME = "user_name";
-  public static final String USER_PASSWORD = "user_password";
-  public static final String CREATED_WHEN = "created_when";
-  public static final String MODIFY_WHEN = "modify_when";
-  public static final String IS_DELETED = "is_deleted";
+  private static final String USER_ID = "id_user";
+  private static final String FIRST_NAME = "first_name";
+  private static final String LAST_NAME = "last_name";
+  private static final String PASSPORT_ID = "id_passport";
+  private static final String PHONE_NUMBER = "phone_number";
+  private static final String USER_NAME = "user_name";
+  private static final String USER_PASSWORD = "user_password";
+  private static final String CREATED_WHEN = "created_when";
+  private static final String MODIFY_WHEN = "modify_when";
+  private static final String IS_DELETED = "is_deleted";
 
   @Autowired private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
