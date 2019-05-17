@@ -40,7 +40,7 @@ public class DamageController {
         damage.setCost(request.getCost());
         damage.setIsDeleted("NO");
         damage.setCreatedWhen(new Timestamp(date.getTime()));
-        damage.setModifyWhen(null);
+        damage.setModifyWhen(new Timestamp(date.getTime()));
         Damage savedDamage = damageDao.save(damage);
 
         return new ResponseEntity<>(savedDamage, HttpStatus.OK);

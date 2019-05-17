@@ -43,7 +43,7 @@ public class UserController {
         user.setUserName(request.getUserName());
         user.setUserPassword(request.getUserPassword());
         user.setCreatedWhen(new Timestamp(date.getTime()));
-        user.setModifyWhen(null);
+        user.setModifyWhen(new Timestamp(date.getTime()));
         user.setIsDeleted("NO");
         User savedUser = userDao.save(user);
 

@@ -7,32 +7,29 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-
 @Repository
 @Transactional
 public class CarDaoImpl implements CarDao {
-    @Override
-    public List<Car> findAll() {
-        return null;
-    }
+  @Override
+  public List<Car> findAll() {
+    return null;
+  }
 
-    @Override
-    public Car findById(Long id) {
-        return null;
-    }
+  @Override
+  public Car findById(Long id) {
+    return null;
+  }
 
-    @Override
-    public void delete(Long id) {
+  @Override
+  public void delete(Long id) {}
 
-    }
+  @Override
+  public Car save(Car entity) {
+    return null;
+  }
 
-    @Override
-    public Car save(Car entity) {
-        return null;
-    }
-
-    @Override
-    public Car update(Car entity) {
-        return null;
-    }
+  @Override
+  public Car update(Car entity) {
+    return null;
+  }
 }

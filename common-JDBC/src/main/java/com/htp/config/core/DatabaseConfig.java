@@ -2,11 +2,7 @@ package com.htp.config.core;
 
 import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.*;
 
 import java.util.Objects;
 
@@ -14,35 +10,35 @@ import java.util.Objects;
 @PropertySource("classpath:database.properties")
 public class DatabaseConfig {
 
-    @Value("${driverName}")
-    private String driverClassName;
+  @Value("${driverName}")
+  private String driverClassName;
 
-    @Value("${password}")
-    private String password;
+  @Value("${password}")
+  private String password;
 
-    @Value("${url}")
-    private String url;
+  @Value("${url}")
+  private String url;
 
-    @Value("${initialSize}")
-    private String initialSize;
+  @Value("${initialSize}")
+  private String initialSize;
 
-    @Value("${login}")
-    private String username;
+  @Value("${login}")
+  private String username;
 
-    @Value("${maxActive}")
-    private String maxActive;
+  @Value("${maxActive}")
+  private String maxActive;
 
-    @Bean(value = "dataSource", destroyMethod = "close")
-    @Scope("singleton")
-    @Primary
-    public BasicDataSource getDatasource() {
-        BasicDataSource dataSource = new BasicDataSource();
-        dataSource.setDriverClassName(driverClassName);
-        dataSource.setPassword(password);
-        dataSource.setUrl(url);
-        dataSource.setInitialSize(Integer.valueOf(Objects.requireNonNull(initialSize)));
-        dataSource.setUsername(username);
-        dataSource.setMaxActive(Integer.valueOf(Objects.requireNonNull(maxActive)));
-        return dataSource;
-    }
+  @Bean(value = "dataSource", destroyMethod = "close")
+  @Scope("singleton")
+  @Primary
+  public BasicDataSource getDatasource() {
+    BasicDataSource dataSource = new BasicDataSource();
+    dataSource.setDriverClassName(driverClassName);
+    dataSource.setPassword(password);
+    dataSource.setUrl(url);
+    dataSource.setInitialSize(Integer.valueOf(Objects.requireNonNull(initialSize)));
+    dataSource.setUsername(username);
+    dataSource.setMaxActive(Integer.valueOf(Objects.requireNonNull(maxActive)));
+    return dataSource;
+  }
 }

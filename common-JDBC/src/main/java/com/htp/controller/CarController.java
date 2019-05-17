@@ -45,7 +45,7 @@ public class CarController {
         car.setCostOneDay(request.getCostOneDay());
         car.setIsDeleted(request.getIsDeleted());
         car.setCreatedWhen(new Timestamp(date.getTime()));
-        car.setModifyWhen(null);
+        car.setModifyWhen(new Timestamp(date.getTime()));
 
         Car savedCar = carDao.save(car);
 
@@ -80,7 +80,7 @@ public class CarController {
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<Car> updateCar(@PathVariable("id") Long carId,
-                                          @RequestBody CarCreateRequest request) {
+                                         @RequestBody CarCreateRequest request) {
         Car car = carDao.findById(carId);
         Date date = new Date();
 
